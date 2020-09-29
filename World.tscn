@@ -1,69 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://World/Brick.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World.gd" type="Script" id=3]
 
 [node name="World" type="Node"]
-
-[node name="Brick" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 160 )
-
-[node name="Brick2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16, 160 )
-
-[node name="Brick3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 32, 160 )
-
-[node name="Brick4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 48, 160 )
-
-[node name="Brick5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64, 160 )
-
-[node name="Brick6" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 160 )
-
-[node name="Brick7" parent="." instance=ExtResource( 1 )]
-position = Vector2( 96, 160 )
-
-[node name="Brick8" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 160 )
-
-[node name="Brick9" parent="." instance=ExtResource( 1 )]
-position = Vector2( 112, 144 )
-
-[node name="Brick10" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 144 )
-
-[node name="Brick11" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 128 )
-
-[node name="Brick12" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 128 )
-
-[node name="Brick13" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 128 )
-
-[node name="Brick14" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 112 )
-
-[node name="Brick15" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 96 )
-
-[node name="Brick16" parent="." instance=ExtResource( 1 )]
-position = Vector2( 176, 96 )
-
-[node name="Brick17" parent="." instance=ExtResource( 1 )]
-position = Vector2( 192, 96 )
-
-[node name="Brick18" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208, 96 )
-
-[node name="Brick19" parent="." instance=ExtResource( 1 )]
-position = Vector2( 224, 96 )
-
-[node name="Brick20" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 96 )
+script = ExtResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, 144 )
@@ -76,9 +18,7 @@ position = Vector2( 48, 136 )
 current = true
 smoothing_enabled = true
 
-[node name="Terrain" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrain"]
-polygon = PoolVector2Array( -112, 0, -64, 0, -64, 224, 64, 224, 128, 208, 160, 208, 192, 176, 224, 176, 224, 208, 256, 208, 320, 208, 352, 192, 352, 160, 384, 160, 384, 48, 432, 48, 432, 256, -112, 256 )
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 65536, 0, 0, 65537, 0, 1, 65538, 0, 1, 65539, 0, 5, 65540, 0, 196609, 65541, 0, 6, 65542, 0, 1, 65543, 0, 1, 65544, 0, 1, 65545, 0, 1, 65546, 0, 1, 65547, 0, 1, 65548, 0, 1, 65549, 0, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65553, 0, 1, 65554, 0, 1, 65555, 0, 2, 131072, 0, 65536, 131073, 0, 65541, 131074, 0, 131073, 131075, 0, 131074, 131077, 0, 131072, 131078, 0, 131073, 131079, 0, 65544, 131080, 0, 131073, 131081, 0, 131073, 131082, 0, 131073, 131083, 0, 131073, 131084, 0, 131073, 131085, 0, 131073, 131086, 0, 65542, 131087, 0, 65541, 131088, 0, 131073, 131089, 0, 131073, 131090, 0, 65542, 131091, 0, 65538, 196608, 0, 65540, 196609, 0, 131074, 196615, 0, 131075, 196622, 0, 131072, 196623, 0, 131074, 196626, 0, 131072, 196627, 0, 65543, 262144, 0, 65539, 262163, 0, 65539, 327680, 0, 65539, 327699, 0, 65539, 393216, 0, 65539, 393233, 0, 196608, 393234, 0, 6, 393235, 0, 131079, 458752, 0, 65539, 458758, 0, 0, 458759, 0, 2, 458764, 0, 0, 458765, 0, 2, 458770, 0, 65536, 458771, 0, 65538, 524288, 0, 65539, 524294, 0, 65536, 524295, 0, 131077, 524296, 0, 2, 524300, 0, 65536, 524301, 0, 65538, 524304, 0, 3, 524306, 0, 65536, 524307, 0, 65538, 589824, 0, 65539, 589828, 0, 0, 589829, 0, 1, 589830, 0, 131078, 589831, 0, 65537, 589832, 0, 131077, 589833, 0, 1, 589834, 0, 1, 589835, 0, 1, 589836, 0, 131078, 589837, 0, 131077, 589838, 0, 1, 589839, 0, 1, 589840, 0, 131080, 589841, 0, 1, 589842, 0, 131078, 589843, 0, 65538, 655360, 0, 196612, 655361, 0, 196609, 655362, 0, 196609, 655363, 0, 196609, 655364, 0, 196614, 655365, 0, 131073, 655366, 0, 131073, 655367, 0, 131073, 655368, 0, 131073, 655369, 0, 131073, 655370, 0, 131073, 655371, 0, 131073, 655372, 0, 131073, 655373, 0, 131073, 655374, 0, 131073, 655375, 0, 131073, 655376, 0, 131073, 655377, 0, 131073, 655378, 0, 131073, 655379, 0, 131074 )
 
 [editable path="Player"]
