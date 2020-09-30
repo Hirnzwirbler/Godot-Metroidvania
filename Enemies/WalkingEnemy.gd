@@ -19,7 +19,7 @@ func _ready():
 	motion.y = 8
 	state = WALKING_DIRECTION
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	match state:
 		DIRECTION.RIGHT:
 			motion.x = MAX_SPEED
