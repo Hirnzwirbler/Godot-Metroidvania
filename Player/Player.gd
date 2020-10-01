@@ -6,6 +6,7 @@ const WallDustEffect = preload("res://Effects/WallDustEffect.tscn")
 const PlayerBullet = preload("res://Player/PlayerBullet.tscn")
 
 var PlayerStats = ResourceLoader.PlayerStats
+var MainInstances = ResourceLoader.MainInstances
 
 export (int) var ACCELERATION = 512
 export (int) var MAX_SPEED = 64
@@ -42,6 +43,10 @@ func set_invincible(value):
 
 func _ready():
 	PlayerStats.connect("player_died", self, "_on_died")
+	MainInstances.Player = self
+
+func _exit_tree():
+	MainInstances.Player = null
 
 func _physics_process(delta):
 	just_jumped = false
@@ -195,6 +200,7 @@ func wall_detach(wall_axis, delta):
 	if wall_axis == 0 or is_on_floor():
 		state = MOVE
 
+# warning-ignore:unused_argument
 func _on_Hurtbox_hit(damage):
 	if not invincible:
 		PlayerStats.health -= 1
