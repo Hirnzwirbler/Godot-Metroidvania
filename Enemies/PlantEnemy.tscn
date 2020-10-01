@@ -48,7 +48,6 @@ script = ExtResource( 3 )
 position = Vector2( 0, -8 )
 texture = ExtResource( 2 )
 hframes = 6
-frame = 5
 
 [node name="AnimationPlayer" parent="." index="2"]
 autoplay = "Animate"
