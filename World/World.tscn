@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Camera.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://World/World.gd" type="Script" id=7]
 [ext_resource path="res://World/RightLeft.tres" type="Curve2D" id=8]
 [ext_resource path="res://Enemies/FlyingEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/PlantEnemy.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Loop"
@@ -96,6 +97,13 @@ position = Vector2( 384, 160 )
 
 [node name="FlyingEnemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( -192, 16 )
+
+[node name="PlantEnemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( -128, 176 )
+
+[node name="PlantEnemy2" parent="." instance=ExtResource( 10 )]
+position = Vector2( -48, 96 )
+rotation = 3.14159
 
 [editable path="Player"]
 
