@@ -11,8 +11,9 @@ func _ready():
 	Events.connect("add_screenshake", self, "_on_Events_add_screenshake")
 	MainInstances.WorldCamera = self
 
-func _exit_tree():
+func queue_free():
 	MainInstances.WorldCamera = null
+	.queue_free()
 
 func _process(_delta):
 	offset_h = rand_range(-shake, shake)

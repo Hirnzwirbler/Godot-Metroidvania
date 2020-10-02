@@ -10,6 +10,7 @@ func _on_StartButton_pressed():
 
 func _on_LoadButton_pressed():
 	SaverAndLoader.is_loading = true
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://World/World.tscn")
 
 

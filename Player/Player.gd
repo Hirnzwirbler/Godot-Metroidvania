@@ -42,6 +42,7 @@ onready var muzzle = $Sprite/PlayerGun/Sprite/Muzzle
 onready var powerupDetector = $PowerupDetector
 onready var cameraFollow = $CameraFollow
 
+# warning-ignore:unused_signal
 signal hit_door(door)
 
 func set_invincible(value):
@@ -52,9 +53,9 @@ func _ready():
 	MainInstances.Player = self
 	call_deferred("assign_world_camera")
 	
-
-func _exit_tree():
+func queue_free():
 	MainInstances.Player = null
+	.queue_free()
 
 func _physics_process(delta):
 	just_jumped = false
