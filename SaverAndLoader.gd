@@ -1,5 +1,7 @@
 extends Node
 
+var is_loading = false
+
 func save_game():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
