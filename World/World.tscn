@@ -21,6 +21,5 @@ position = Vector2( 64, 136 )
 [node name="UI" parent="." instance=ExtResource( 3 )]
 
 [node name="Level_00" parent="." instance=ExtResource( 4 )]
-[connection signal="player_died" from="Player" to="." method="_on_Player_player_died"]
 
 [editable path="Player"]

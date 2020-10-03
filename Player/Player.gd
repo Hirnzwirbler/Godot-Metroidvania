@@ -241,11 +241,10 @@ func wall_detach(wall_axis, delta):
 	if wall_axis == 0 or is_on_floor():
 		state = MOVE
 
-# warning-ignore:unused_argument
 func _on_Hurtbox_hit(damage):
 	if not invincible:
 		SoundFx.play("Hurt")
-		PlayerStats.health -= 1
+		PlayerStats.health -= damage
 		blinkAnimator.play("Blink")
 
 func _on_died():
