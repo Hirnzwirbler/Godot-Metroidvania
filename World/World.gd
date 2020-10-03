@@ -34,3 +34,8 @@ func get_door_with_connection(notDoor, connection):
 		if door.connection == connection and door != notDoor:
 			return door
 	return null
+
+func _on_Player_player_died():
+	yield(get_tree().create_timer(1.0), "timeout")
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://Menus/GameOverMenu.tscn")
